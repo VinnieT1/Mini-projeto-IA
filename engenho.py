@@ -51,11 +51,15 @@ def get_conditions(rules: list[str]) -> dict[str, list]:
 def evaluate_condition(conditions: list[str], propositions: dict[str, bool]) -> bool:
     condition_values = conditions.copy()
     for idx, condition in enumerate(condition_values):
-        condition_values[idx] = propositions[condition]
+        if 'nao ' in condition:
+            inverse_condition = condition.removeprefix('nao ')
+            condition_values[idx] = not propositions[inverse_condition]
+        else:
+            condition_values[idx] = propositions[condition]
 
     return False not in condition_values
 
-def natural_and(and_conditions: list[str]):
+def natural_and(and_conditions: list[str]) -> None:
     res = ""
 
     for condition in and_conditions:
@@ -63,9 +67,8 @@ def natural_and(and_conditions: list[str]):
 
     return res[:-3]
 
-def forwards(propositions: dict[str, bool], conditions: dict[str, list[list[str]]]):
+def forwards(propositions: dict[str, bool], conditions: dict[str, list[list[str]]]) -> None:
     conclusions = list(conditions.keys())
-    print('conclusions are', conclusions)
     conclusions_len = len(conclusions)
     i = 0 # index iterating over each conclusion
 
@@ -84,7 +87,7 @@ def forwards(propositions: dict[str, bool], conditions: dict[str, list[list[str]
 
         i += 1
 
-def backwards(propositions: dict[str, bool], conditions: dict[str, list[list[str]]]):
+def backwards(propositions: dict[str, bool], conditions: dict[str, list[list[str]]]) -> None:
     for conclusion in conditions:
         if propositions[conclusion]:
             is_fact = True
@@ -108,9 +111,9 @@ if __name__ == '__main__':
     # That means that, if at least one list of the inner lists evaluates to True, than the
     # conclusion is True. Otherwise, it's False.
 
-    print('rules =', rules)
+    # print('rules =', rules)
     print('propositions initially =', propositions)
-    print('conditions =', conditions)
+    # print('conditions =', conditions)
     
     forwards(propositions, conditions)
 
