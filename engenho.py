@@ -48,14 +48,14 @@ def get_conditions(rules: list[str]) -> dict[str, list]:
 
     return conditions
 
-def evaluate_condition(conditions: list[str], propositions: dict[str, bool], conclusion: str) -> bool:
+def evaluate_condition(conditions: list[str], propositions: dict[str, bool]) -> bool:
     condition_values = conditions.copy()
     for idx, condition in enumerate(condition_values):
         condition_values[idx] = propositions[condition]
 
     return False not in condition_values
 
-def infere(rules: list[str], propositions: dict[str, bool], conditions: dict[str, list[list[str]]]):
+def forwards(propositions: dict[str, bool], conditions: dict[str, list[list[str]]]):
     conclusions = list(conditions.keys())
     print('conclusions are', conclusions)
     conclusions_len = len(conclusions)
@@ -69,13 +69,18 @@ def infere(rules: list[str], propositions: dict[str, bool], conditions: dict[str
         conclusion = conclusions[i] # conclusion we're evaluating
 
         for condition in conditions[conclusion]:
-            evaluated_condition = evaluate_condition(condition, propositions, conclusion)
+            evaluated_condition = evaluate_condition(condition, propositions)
             if evaluated_condition:
                 propositions[conclusion] = True
                 i = -1
 
         i += 1
-            
+
+def backwards(propositions: dict[str, bool], conditions: dict[str, list[list[str]]]):
+    for conclusion in conditions:
+        if propositions[conclusion]:
+            print(conditions[conclusion])
+
 if __name__ == '__main__':
     rules = extract_rules_from_file('rules.json') # rules.json as default
     propositions = get_propositions(rules)
@@ -91,6 +96,6 @@ if __name__ == '__main__':
     print('propositions initially =', propositions)
     print('conditions =', conditions)
     
-    infere(rules, propositions, conditions)
+    forwards(propositions, conditions)
 
     print('propositions after inference =', propositions)
