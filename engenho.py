@@ -51,11 +51,13 @@ def get_conditions(rules: list[str]) -> dict[str, list]:
 def evaluate_condition(conditions: list[str], propositions: dict[str, bool]) -> bool:
     condition_values = conditions.copy()
     for idx, condition in enumerate(condition_values):
-        if 'nao ' in condition:
-            inverse_condition = condition.removeprefix('nao ')
-            condition_values[idx] = not propositions[inverse_condition]
-        else:
-            condition_values[idx] = propositions[condition]
+        if 'nao' in condition and condition.removeprefix('nao ') in propositions:
+                propositions[condition] = not propositions[condition.removeprefix('nao ')]
+
+        if 'nao' not in condition and ('nao ' + condition) in propositions and propositions[condition]:
+            propositions['nao ' + condition] = False
+
+        condition_values[idx] = propositions[condition]
 
     return False not in condition_values
 
@@ -112,10 +114,10 @@ if __name__ == '__main__':
     # conclusion is True. Otherwise, it's False.
 
     # print('rules =', rules)
-    print('propositions initially =', propositions)
+    # print('propositions initially =', propositions)
     # print('conditions =', conditions)
     
     forwards(propositions, conditions)
 
-    print('propositions after inference =', propositions)
+    # print('propositions after inference =', propositions)
     backwards(propositions, conditions)
