@@ -55,6 +55,14 @@ def evaluate_condition(conditions: list[str], propositions: dict[str, bool]) -> 
 
     return False not in condition_values
 
+def natural_and(and_conditions: list[str]):
+    res = ""
+
+    for condition in and_conditions:
+        res += condition + " e "
+
+    return res[:-3]
+
 def forwards(propositions: dict[str, bool], conditions: dict[str, list[list[str]]]):
     conclusions = list(conditions.keys())
     print('conclusions are', conclusions)
@@ -79,7 +87,15 @@ def forwards(propositions: dict[str, bool], conditions: dict[str, list[list[str]
 def backwards(propositions: dict[str, bool], conditions: dict[str, list[list[str]]]):
     for conclusion in conditions:
         if propositions[conclusion]:
-            print(conditions[conclusion])
+            is_fact = True
+            for and_conditions in conditions[conclusion]:
+                if evaluate_condition(and_conditions, propositions):
+                    print(conclusion, "porque", natural_and(and_conditions))
+                    is_fact = False
+                    break
+            
+            if is_fact:
+                print(conclusion, "é fato")
 
 if __name__ == '__main__':
     rules = extract_rules_from_file('rules.json') # rules.json as default
@@ -99,3 +115,4 @@ if __name__ == '__main__':
     forwards(propositions, conditions)
 
     print('propositions after inference =', propositions)
+    backwards(propositions, conditions)
