@@ -1,0 +1,22 @@
+{
+    "rules":[
+        "se tem pelo entao eh um mamifero",
+        "se da leite entao eh um mamifero",
+        "se tem penas entao eh uma ave",
+        "se voa e bota ovos entao eh uma ave",
+        "se eh um mamifero e come carne entao eh um carnivoro",
+        "se eh um mamifero e tem dentes pontiagudos e tem garras e seus olhos sao frontais entao eh um carnivoro",
+        "se eh um mamifero e tem casco entao eh um ungulado",
+        "se eh um mamifero e rumina e tem dedos pares entao eh um ungulado",
+        "se eh um carnivoro e tem cor amarelo-tostado e tem manchas escuras entao eh um leopardo",
+        "se eh um carnivoro e tem cor amarelo-tostado e tem listras pretas entao eh um tigre",
+        "se eh um ungulado e tem pernas longas e tem pescoco comprido e tem cor amarelo-tostado e tem manchas escuras entao eh uma girafa",
+        "se eh um ungulado e tem cor branca e tem listras pretas entao eh uma zebra",
+        "se eh uma ave e nao voa e tem pernas longas e tem pescoco comprido e eh preto branco entao eh um avestruz",
+        "se eh uma ave e nao voa e nada e eh preto branco entao eh um pinguim",
+        "se eh uma ave e eh um bom voador entao eh um albatroz",
+        "se eh uma ave e tem um corpo arredondado e tem penas densas e nao voa e eh domehstico entao eh uma galinha",
+        "se eh uma ave e tem pernas longas e tem pescoco comprido e tem cauda curta e eh cor de rosa entao eh um flamingo",
+        "se eh um mamifero e voa e nao eh uma ave entao eh um morcego"
+    ]
+}
