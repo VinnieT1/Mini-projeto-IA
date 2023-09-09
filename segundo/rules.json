@@ -1,0 +1,14 @@
+{
+    "rules":[
+        "se dor de cabeca entao analgesico",
+        "se dor de cabeca e garganta inflamada e tosse entao eh gripe",
+        "se cansaco e dor de cabeca entao eh mononucleose infecciosa",
+        "se cansaco e garganta inflamada entao eh amigdalite",
+        "se cansaco e nao eh gripe e nao eh mononucleose infecciosa e nao eh amigdalite entao eh estresse",
+        "se fadiga e dor de cabeca e dores no corpo e ocasionais dores na garganta e ocasionais tosses entao eh covid19",
+        "se coriza e espirro entao eh rinite alergica",
+        "se dor de cabeca e coriza entao eh sinusite",
+        "se dores no corpo e cansaco entao eh dengue",
+        "se dores nas articulacoes entao eh chicungunha"
+    ]
+}
