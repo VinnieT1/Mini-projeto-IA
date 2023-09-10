@@ -1,5 +1,10 @@
 # Mini-projeto-IA
 Mini projetos para a matéria de Inteligência Artificial
+
+O Expert Sinta se destaca por fornecer uma interface gráfica intuitiva que permite aos usuários construir sua base de conhecimento de forma visual e interativa. Por outro lado, nossa solução adota uma abordagem diferente, utilizando um arquivo JSON como meio de armazenamento e representação da base de conhecimento.  
+Uma característica distintiva do nosso programa é a capacidade de gerar explicações em linguagem natural para as conclusões que produz. Isso significa que não apenas apresenta os resultados, mas também fornece uma narrativa compreensível e descritiva sobre como chegou a essas conclusões, tornando a interpretação e a tomada de decisões mais acessíveis aos usuários.  
+Portanto, enquanto o Expert Sinta enfoca a construção visual da base de conhecimento, nossa solução se concentra na representação por meio de JSON e na entrega de explicações detalhadas em linguagem natural para maior transparência e entendimento das conclusões.  
+
 ## Questão 3
 Na terceira pergunta, empregamos o algoritmo ID3 e armazenamos a árvore de decisão em um formato JSON 
 com a seguinte estrutura:  
