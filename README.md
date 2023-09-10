@@ -79,6 +79,6 @@ Veja o JSON:
 }
 ```
 ### Execução
-Para executá-lo, é suficiente executar o script em Python, desde que o banco de dados esteja armazenado no mesmo diretório com o nome `dados.csv`.  
+Para executá-lo, é suficiente executar o script em Python, desde que a base de dados esteja armazenado no mesmo diretório com o nome `dados.csv`.  
 No diretório `terceiro`, realize a execução do seguinte comando:  
 * `python3 main.py`
