@@ -6,7 +6,7 @@ com a seguinte estrutura:
 ![alt text](https://github.com/VinnieT1/Mini-projeto-IA/blob/main/jsoncrack.com.png)  
 Em essência, o `JSON` descreve um vértice, identificando se ele é uma folha ou um ponto de decisão. 
 Se for uma folha, ele possui a chave "Risco" com seu valor correspondente representando o resultado. 
-Caso seja um ponto de decisão, o objeto contém a chave "pergunta" com o valor correspondente ao critério  
+Caso seja um ponto de decisão, o objeto contém a chave "pergunta" com o valor correspondente ao critério 
 de decisão daquele vértice, e depois segue uma matriz de várias subárvores, cada uma delas representando 
 as opções de decisão disponíveis nas arestas.  
 Veja o JSON:  
