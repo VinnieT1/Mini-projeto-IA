@@ -7,6 +7,11 @@ Portanto, enquanto o Expert Sinta enfoca a construção visual da base de conhec
 
 As bases de conhecimento do Expert Sinta estão localizadas em suas respectivas pastas de questões.
 
+## Participantes
+* Pedro Victor Alexandre Ferreira Santos
+* Renalvo Alves Ferreira Júnior
+* Vinícius Teixeira Pereira Ramos
+
 ## Questão 1
 Na primeira questão, utilizamos o script de engenho de inferência para transformar as variáveis em proposições booleanas, construindo condições para cada conclusão das regras SE/ENTÃO, as quais estão localizadas em um arquivo JSON. O algoritmo faz forwards inference a toda resposta de pergunta, as quais são respondidas via terminal. Ao chegar em uma conclusão de animal (as quais são classificadas como objetivo final no arquivo final.json), o algoritmo para e dá o resultado de sua inferência, dando o animal encontrado e as justificativas por trás dessa inferência.
 
